@@ -1,27 +1,71 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Radley:ital@0;1&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: ##f8f4ec;
-  --foreground: #381648;
-  --brown: #9b4819;
-  --brown2: #a3503a;
-}
-
 /* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #381648;
-    --foreground: ##f8f4ec;
-    --darkened-foreground: #310745;
+    --background: ##dfdcd4;
+    --foreground: #121212;
+    --brown: #9b4819;
+    --brown2: #a3503a;
   }
 } */
+
+:root {
+  --background: ##dfdcd4;
+  --foreground: #121212;
+  --darkened-background: #adaaa2;
+  /* --brown: #9b4819;
+  --brown2: #a3503a; */
+}
 
 @layer base {
   body {
     color: var(--foreground);
     background: var(--background);
     /* font-family: Arial, Helvetica, sans-serif; */
+  }
+
+  .radley-regular {
+    font-family: "Radley", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .radley-regular-italic {
+    font-family: "Radley", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  .cabin-regular {
+    font-family: "Cabin", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+  .ubuntu-regular {
+    font-family: "Ubuntu", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .ubuntu-regular-italic {
+    font-family: "Ubuntu", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  .ubuntu-bold {
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .ubuntu-bold-italic {
+    font-family: "Ubuntu", serif;
+    font-weight: 700;
+    font-style: italic;
   }
 }
   
@@ -87,4 +131,20 @@
     outline: 2px solid var(--c);
     outline-offset: 5px;
   }
+}
+
+@layer utilities {
+}
+
+.path {
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1000; /* Adjust to match path length */
+  stroke-dashoffset: 0;   /* Initially visible */
+  transition: stroke-dashoffset 0.5s ease-in-out; /* Smooth transition */
+}
+
+.path.hide {
+  stroke-dashoffset: 1000; /* Hide path when hovered */
 }

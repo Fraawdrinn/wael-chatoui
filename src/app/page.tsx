@@ -1,11 +1,13 @@
 import Image from "next/image";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+import Presentation from "@/components/presentation";
+import Aside from "@/components/aside";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Presentation />
+      <Aside />
       <main>
       </main>
       <Footer />
