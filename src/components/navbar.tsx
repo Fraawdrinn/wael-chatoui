@@ -4,7 +4,10 @@ import Link from "next/link";
 const Navbar: React.FC = () => {
   return (
     <nav 
-    className="border-b border-white min-h-12 lg:min-h-12">
+    className="flex justify-between border-b border-white min-h-12 lg:min-h-12">
+      <h1 className="relative left-8 top-1 text-3xl font-bold">
+        Wael
+      </h1>
       <ul className="">
         <li>
           <Link href="/contact-me">
