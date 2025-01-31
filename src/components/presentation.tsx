@@ -1,38 +1,32 @@
 "use client";
+import Bar from "@/components/bar";
 
-const scaleWhenHover = "inline-block transition-transform duration-300 ease-in-out hover:scale-110 cursor-pointer";
-
-export default function Presentation() {
-
-  const textElements = [
-    { text: ["Bonjour", "👋,"], className: "text-4xl radley-regular-italic" },
-    { text: ["Je", "m'", "appelle", "Wael", "!"], className: "text-6xl text-[#9b4819] cabin-regular font-semibold" },
-  ];
+const Presentation:React.FC = () => {
 
   return (
-    <header className="pb-24 shadow-md">
+    <header className="w-screen pb-24 shadow-lg">
+      <Bar />
       <div className="h-screen flex items-center justify-center">
-        <div className="text-center">
-          {textElements.map((element, i) => (
-            <div key={i} className={element.className}>
-              {createTextWithHoverEffect(element.text)}
-            </div>
-          ))}
+        <div className="presentation-sentences">
+          <h2 className="text-4xl ubuntu-regular">
+            <i><span>Bonjour</span></i>
+            <span>👋</span>
+          </h2>
+          <h1 className="sm:text-4xl md:text-6xl text-[#9b4819] cabin-regular font-semibold">
+            <i>
+            <span>Je</span>&nbsp;
+            <span>m'</span>
+            <span>appelle</span>&nbsp; 
+            <span className="name">Wael</span>&nbsp;
+            <span>!</span>
+            </i>
+          </h1>
           <AnimatedPath />
         </div>
       </div>
     </header>
   );
 };
-
-// Function to create text with hover effect
-function createTextWithHoverEffect(text: string[]) {
-  return text.map((word, index) => (
-    <span key={index} className={scaleWhenHover}>
-      {word}&nbsp;
-    </span>
-  ));
-}
 
 function AnimatedPath() {
   return (
@@ -46,3 +40,5 @@ function AnimatedPath() {
     </svg>
   );
 }
+
+export default Presentation;

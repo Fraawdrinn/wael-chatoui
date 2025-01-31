@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="overflow-x-hidden"
+        className="overflow-x-hidden w-screen scroll-smooth"
       >
         {children}
       </body>

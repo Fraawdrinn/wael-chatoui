@@ -1,129 +1,138 @@
+/* ======================= */
+/*         IMPORTS         */
+/* ======================= */
+
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Radley:ital@0;1&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: ##dfdcd4;
-    --foreground: #121212;
-    --brown: #9b4819;
-    --brown2: #a3503a;
-  }
-} */
+/* ======================= */
+/*      CSS VARIABLES      */
+/* ======================= */
 
 :root {
-  --background: ##e4e1d8;
-  --foreground: #121212;
+  --background: #f4f1e8;
+  --foreground: #333;
   --darkened-background: #adaaa2;
-  /* --brown: #9b4819;
-  --brown2: #a3503a; */
+  --brown: #9b4819;
+  --brown2: #a3503a;
 }
+
+/* ======================= */
+/*       BASE STYLES       */
+/* ======================= */
 
 @layer base {
   body {
-    color: var(--foreground);
-    /* background-color: var(--background); */
-    /* font-family: Arial, Helvetica, sans-serif; */
+    @apply text-[var(--foreground)] bg-[var(--background)] poppins-regular;
   }
 
+  
+  /* Font Styles */
   .radley-regular {
     font-family: "Radley", serif;
     font-weight: 400;
+  }
+  .poppins-regular {
+    font-family: "Poppins", serif;
+    font-weight: 500;
     font-style: normal;
   }
   .radley-regular-italic {
-    font-family: "Radley", serif;
-    font-weight: 400;
-    font-style: italic;
+    @apply radley-regular italic;
   }
+
   .cabin-regular {
     font-family: "Cabin", serif;
-    font-optical-sizing: auto;
     font-weight: 500;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
+    font-optical-sizing: auto;
+    font-variation-settings: "wdth" 100;
   }
+
   .ubuntu-regular {
     font-family: "Ubuntu", serif;
     font-weight: 400;
-    font-style: normal;
   }
+
   .ubuntu-regular-italic {
-    font-family: "Ubuntu", serif;
-    font-weight: 400;
-    font-style: italic;
+    @apply ubuntu-regular italic;
   }
+
   .ubuntu-bold {
     font-family: "Ubuntu", serif;
     font-weight: 700;
-    font-style: normal;
   }
+
   .ubuntu-bold-italic {
-    font-family: "Ubuntu", serif;
-    font-weight: 700;
-    font-style: italic;
+    @apply ubuntu-bold italic;
   }
 }
-  
+
+/* ======================= */
+/*      COMPONENTS         */
+/* ======================= */
 
 @layer components {
-
+  /* Menu Button */
   .menu {
-    --s: 1.5rem; /* control the size */
-    --c: white; /* the color */
+    --s: 1.5rem; /* Size */
+    --c: var(--brown2); /* Color */
 
     height: var(--s);
     aspect-ratio: 1;
     border: none;
     padding: 0;
-    border-inline: calc(var(--s)/2) solid #0000;
+    border-inline: calc(var(--s)/2) solid transparent;
     box-sizing: content-box;
-    --_g1: linear-gradient(var(--c) 20%,#0000 0 80%,var(--c) 0) no-repeat content-box border-box;
-    --_g2: radial-gradient(circle closest-side at 50% 12.5%,var(--c) 95%,#0000) repeat-y content-box border-box;
+    
+    --_g1: linear-gradient(var(--c) 20%, transparent 0 80%, var(--c) 0) no-repeat content-box border-box;
+    --_g2: radial-gradient(circle closest-side at 50% 12.5%, var(--c) 95%, transparent) repeat-y content-box border-box;
+    
     background:
-      var(--_g2) left  var(--_p,0px) top,
-      var(--_g1) left  calc(var(--s)/10 + var(--_p,0px)) top,
-      var(--_g2) right var(--_p,0px) top,
-      var(--_g1) right calc(var(--s)/10 + var(--_p,0px)) top;
-    background-size:
-      20% 80%,
-      40% 100%;
+      var(--_g2) left var(--_p, 0px) top,
+      var(--_g1) left calc(var(--s)/10 + var(--_p, 0px)) top,
+      var(--_g2) right var(--_p, 0px) top,
+      var(--_g1) right calc(var(--s)/10 + var(--_p, 0px)) top;
+    
+    background-size: 20% 80%, 40% 100%;
     position: relative;
     clip-path: inset(0 25%);
-    -webkit-mask: linear-gradient(90deg,#0000,#000 25% 75%,#0000);
+    -webkit-mask: linear-gradient(90deg, transparent, black 25% 75%, transparent);
     cursor: pointer;
     transition:
-      background-position .3s var(--_s,.3s),
-      clip-path 0s var(--_s,.6s);
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    appearance:none;
+      background-position 0.3s var(--_s, 0.3s),
+      clip-path 0s var(--_s, 0.6s);
+    appearance: none;
   }
+
   .menu:before,
   .menu:after {
-    content:"";
+    content: "";
     position: absolute;
     border-radius: var(--s);
     inset: 40% 0;
     background: var(--c);
-    transition: transform .3s calc(.3s - var(--_s,.3s));
+    transition: transform 0.3s calc(0.3s - var(--_s, 0.3s));
   }
 
   .menu:checked {
     clip-path: inset(0);
-    --_p: calc(-1*var(--s));
+    --_p: calc(-1 * var(--s));
     --_s: 0s;
   }
+
   .menu:checked:before {
     transform: rotate(45deg);
   }
+
   .menu:checked:after {
     transform: rotate(-45deg);
   }
+
   .menu:focus-visible {
     clip-path: none;
     -webkit-mask: none;
@@ -131,27 +140,47 @@
     outline: 2px solid var(--c);
     outline-offset: 5px;
   }
+
+  /* Animated Path */
+  .path {
+    fill: none;
+    stroke: black;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1500; /* Adjust to match path length */
+    stroke-dashoffset: 1500; /* Start hidden */
+    animation: drawPath 4s ease-in-out infinite alternate;
+  }
 }
+
+/* ======================= */
+/*        UTILITIES        */
+/* ======================= */
 
 @layer utilities {
+  .presentation-sentences {
+    @apply text-center;
+    
+    & span {
+      @apply inline-block transition-transform duration-300 ease-in-out hover:scale-105 cursor-pointer;
+      
+      &.name {
+        @apply hover:scale-110;
+      }
+    }
+  }
 }
-.path {
-  fill: none;
-  stroke: black;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 
-  stroke-dasharray: 1500; /* Adjust to match path length */
-  stroke-dashoffset: 1500; /* Start hidden */
-  animation: drawPath 4s ease-in-out infinite alternate; /* Looping animation */
-}
+/* ======================= */
+/*        ANIMATIONS       */
+/* ======================= */
 
 @keyframes drawPath {
   0% {
-    stroke-dashoffset: 1500; /* Fully hidden */
+    stroke-dashoffset: 1500;
   }
   100% {
-    stroke-dashoffset: 0; /* Fully drawn */
+    stroke-dashoffset: 0;
   }
 }
