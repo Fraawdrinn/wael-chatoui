@@ -1,11 +1,11 @@
 "use client"
-import { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
+import React, { ReactNode } from "react";
 
-import createIntersectionObserver from "@/scripts/observer";
-
-const fromLeftObserver = createIntersectionObserver("left-show");
-const fromLeftDisplay = document.querySelector(".from-left")
+interface AnimatedContainerProps {
+  children: ReactNode;
+}
 
 const Content:React.FC = () => {
 
@@ -13,24 +13,36 @@ const Content:React.FC = () => {
     <div className="h-full w-[75vw] shadow-lg shadow-gray-500/50 py-12 pt-16 px-8">
       <article 
       className="">
-        <motion.div
-          initial={{ opacity: 0, x: -32 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.2 }} // Trigger once when 20% visible
-          className=""
-        >
-          <h1 id='about-me' className='chapter ubuntu-regular underline text-2xl font-bold pb-6'>
+        <AnimatedContainer>
+          <h1 id="about-me" className="chapter ubuntu-regular underline text-2xl font-bold pb-6">
             À propos de moi
           </h1>
-          <p className="w-[52vw] text-center pl-12 leading-6">
+          <p className="w-[52vw] text-center pl-12 leading-relaxed">
             Étudiant curieux et motivé, amateur de développement web et programmation. <br />
-            J'ai comme projet d’étude d’intégrer une école d’ingénieur en filière informatique (application et intelligence artificelle) 
+            J&apos;ai comme projet d’étude d’intégrer une école d’ingénieur en filière informatique 
+            (application et intelligence artificielle).
           </p>
-        </motion.div>
+        </AnimatedContainer>
       </article>
     </div>
   );
 }
+
+const AnimatedContainer: React.FC<AnimatedContainerProps> = ({ children }) => {
+  return (
+    <div>
+      {React.Children.map(children, (child, index) => (
+        <motion.div
+          initial={{ opacity: 0, x: -32 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: index * 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          {child}
+        </motion.div>
+      ))}
+    </div>
+  );
+};
 
 export default Content;

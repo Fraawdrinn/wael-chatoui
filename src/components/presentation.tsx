@@ -15,7 +15,7 @@ const Presentation:React.FC = () => {
           <h1 className="sm:text-4xl md:text-6xl text-[#9b4819] cabin-regular font-semibold">
             <i>
             <span>Je</span>&nbsp;
-            <span>m'</span>
+            <span>m&apos;</span>
             <span>appelle</span>&nbsp; 
             <span className="name">Wael</span>&nbsp;
             <span>!</span>
