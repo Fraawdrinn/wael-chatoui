@@ -14,7 +14,7 @@ interface ContentProps {
 const Content:React.FC<ContentProps> = ({ className="" }) => {
 
   return (
-    <div className={`${className} h-full shadow-lg shadow-gray-500/50 py-12 pt-16 px-8`}>
+    <div className={`${className} h-full text-lg shadow-lg shadow-gray-500/50 py-12 pt-16 px-8`}>
       <article 
       className="">
         <AnimatedContainer>

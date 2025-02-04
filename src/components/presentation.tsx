@@ -12,7 +12,7 @@ const Presentation:React.FC = () => {
             <i><span>Bonjour</span></i>
             <span>👋</span>
           </h2>
-          <h1 className="text-4xl md:text-6xl text-[#9b4819] poppins-medium font-semibold">
+          <h1 className="text-4xl md:text-6xl text-primary poppins-medium font-semibold">
             <i>
             <span>Je</span>&nbsp;
             <span>m&apos;</span>

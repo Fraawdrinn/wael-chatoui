@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
 interface SkillProps {
-  element: ReactNode; // Allows any JSX inside the component
+  element: ReactNode; 
 }
 
 const Skill: React.FC<SkillProps> = ({ element }) => {
