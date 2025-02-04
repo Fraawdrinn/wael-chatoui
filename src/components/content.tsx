@@ -23,7 +23,7 @@ const Content:React.FC<ContentProps> = ({ className="" }) => {
           </h1>
           <p className="w-[52vw] text-center pl-12 leading-relaxed">
             Étudiant curieux et motivé, amateur de développement web et programmation. <br />
-            J&apos;ai comme projet d’étude d’intégrer une école d’ingénieur en filière informatique 
+            J&apos;ai comme projet d&apos;étude d’intégrer une école d’ingénieur en filière informatique 
             (application et intelligence artificielle).
           </p>
         </AnimatedContainer>
