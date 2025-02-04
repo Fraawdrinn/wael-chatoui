@@ -16,6 +16,7 @@ interface ContactData {
 
 interface DB {
   contacts: ContactData[];
+  [key: string]: ContactData[];
 }
 
 // Function to read data from the JSON file asynchronously

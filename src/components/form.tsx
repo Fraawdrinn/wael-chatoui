@@ -29,6 +29,7 @@ const Form: React.FC = () => {
       }
     } catch (error) {
       setStatus("Erreur lors de l'envoi.");
+      console.log(error)
     }
   };
 
