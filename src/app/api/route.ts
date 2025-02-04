@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
+// Path to the database file
 const dbPath = path.resolve("src/app/api/db.json");
 
 // Define interfaces for data structures
@@ -10,68 +11,78 @@ interface ContactData {
   email: string;
   subject: string;
   message: string;
+  date?: string;
 }
+
 interface DB {
   contacts: ContactData[];
 }
 
-// Fonction pour lire les données du fichier JSON
-const readData = () => {
+// Function to read data from the JSON file asynchronously
+const readData = async (): Promise<DB> => {
   try {
-    const data = fs.readFileSync(filePath, "utf-8");
+    const data = await fs.promises.readFile(dbPath, "utf-8");
     return JSON.parse(data);
   } catch (error) {
-    return [];
+    console.error("Error reading data:", error);
+    return { contacts: [] };
   }
 };
 
-// Fonction pour écrire dans le fichier JSON
-export const writeData = (newData: ContactData, listName: string = "contacts") => {
+// Function to write data to the JSON file asynchronously
+const writeData = async (newData: ContactData, listName: string = "contacts") => {
   try {
-    const dbFile = fs.readFileSync(dbPath, "utf-8");
-    const db: DB = JSON.parse(dbFile);
-
-    // Check if listName exists, if not create it
+    const db: DB = await readData();
+    
+    // Ensure the list exists, otherwise initialize it
     if (!db[listName]) {
       db[listName] = [];
     }
 
-    // Push the new data to the specific list
+    // Add the new data to the list
     db[listName].push(newData);
 
-    // Write updated data back to the JSON file
-    fs.writeFileSync(dbPath, JSON.stringify(db, null, 2));
+    // Write the updated data back to the file
+    await fs.promises.writeFile(dbPath, JSON.stringify(db, null, 2));
   } catch (error) {
     console.error("Error writing to database:", error);
   }
 };
 
-// 📨 POST: Stocke les données du formulaire dans contacts.json
+// 📨 POST: Store contact data in contacts.json
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const { name, email, subject, message } = body;
 
     if (!name || !email || !subject || !message) {
-      return NextResponse.json({ error: "Tous les champs sont requis" }, { status: 400 });
+      return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
 
-    const contacts = readData();
-    contacts.push({ name, email, subject, message, date: new Date().toISOString() });
-    writeData(contacts);
+    const newContact: ContactData = {
+      name,
+      email,
+      subject,
+      message,
+      date: new Date().toISOString(),
+    };
 
-    return NextResponse.json({ message: "Message enregistré avec succès !" }, { status: 200 });
+    await writeData(newContact);
+
+    return NextResponse.json({ message: "Message successfully saved!" }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: "Erreur serveur" }, { status: 500 });
+    console.error("Error in POST request:", error);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
 
-// 📜 GET: Récupère la liste des contacts stockés
+// 📜 GET: Retrieve the list of stored contacts
 export async function GET() {
   try {
-    const contacts = readData();
-    return NextResponse.json(contacts, { status: 200 });
+    const data = await readData();
+    return NextResponse.json(data.contacts, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: "Erreur lors de la récupération des contacts." }, { status: 500 });
+    console.error("Error in GET request:", error);
+    return NextResponse.json({ error: "Error fetching contacts" }, { status: 500 });
   }
 }
