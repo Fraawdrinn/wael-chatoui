@@ -3,8 +3,7 @@
 /* ======================= */
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Radley:ital@0;1&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Playwrite+IN&family=Poppins:wght@500&family=Ubuntu:wght@500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -28,48 +27,26 @@
 
 @layer base {
   body {
-    @apply text-[var(--foreground)] bg-[var(--background)] poppins-regular;
+    @apply text-[var(--foreground)] bg-[var(--background)] poppins-medium;
   }
-
   
   /* Font Styles */
-  .radley-regular {
-    font-family: "Radley", serif;
+  .playwrite-in-medium {
+    font-family: "Playwrite IN", serif;
+    font-optical-sizing: auto;
     font-weight: 400;
+    font-style: normal;
   }
-  .poppins-regular {
+  .poppins-medium {
     font-family: "Poppins", serif;
     font-weight: 500;
     font-style: normal;
   }
-  .radley-regular-italic {
-    @apply radley-regular italic;
-  }
-
-  .cabin-regular {
-    font-family: "Cabin", serif;
+  .ubuntu-medium {
+    font-family: "Ubuntu", serif;
     font-weight: 500;
-    font-optical-sizing: auto;
-    font-variation-settings: "wdth" 100;
-  }
-
-  .ubuntu-regular {
-    font-family: "Ubuntu", serif;
-    font-weight: 400;
-  }
-
-  .ubuntu-regular-italic {
-    @apply ubuntu-regular italic;
-  }
-
-  .ubuntu-bold {
-    font-family: "Ubuntu", serif;
-    font-weight: 700;
-  }
-
-  .ubuntu-bold-italic {
-    @apply ubuntu-bold italic;
-  }
+    font-style: normal;
+  }  
 }
 
 /* ======================= */

@@ -6,8 +6,12 @@ import Content from "@/components/content";
 const Main:React.FC = () => {
   return (
     <main className="flex h-[120vh]">
-      <Aside />
-      <Content />
+      <Aside 
+      className=""
+      />
+      <Content 
+      className="w-screen md:w-[75vw]"
+      />
     </main>
   );
 }

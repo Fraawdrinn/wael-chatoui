@@ -8,11 +8,11 @@ const Presentation:React.FC = () => {
       <Bar />
       <div className="h-screen flex items-center justify-center">
         <div className="presentation-sentences">
-          <h2 className="text-4xl ubuntu-regular">
+          <h2 className="text-3xl md:text-4xl playwrite-in-medium pb-2">
             <i><span>Bonjour</span></i>
             <span>👋</span>
           </h2>
-          <h1 className="sm:text-4xl md:text-6xl text-[#9b4819] cabin-regular font-semibold">
+          <h1 className="text-4xl md:text-6xl text-[#9b4819] poppins-medium font-semibold">
             <i>
             <span>Je</span>&nbsp;
             <span>m&apos;</span>

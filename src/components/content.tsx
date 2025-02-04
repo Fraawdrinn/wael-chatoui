@@ -7,10 +7,14 @@ interface AnimatedContainerProps {
   children: ReactNode;
 }
 
-const Content:React.FC = () => {
+interface ContentProps {
+  className?: string;
+}
+
+const Content:React.FC<ContentProps> = ({ className="" }) => {
 
   return (
-    <div className="h-full w-[75vw] shadow-lg shadow-gray-500/50 py-12 pt-16 px-8">
+    <div className={`${className} h-full shadow-lg shadow-gray-500/50 py-12 pt-16 px-8`}>
       <article 
       className="">
         <AnimatedContainer>
@@ -36,7 +40,7 @@ const AnimatedContainer: React.FC<AnimatedContainerProps> = ({ children }) => {
           initial={{ opacity: 0, x: -32 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: index * 0.2 }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           {child}
         </motion.div>
