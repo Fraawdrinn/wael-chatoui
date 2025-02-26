@@ -54,20 +54,19 @@ const Main: React.FC = () => {
 
   const handleButtonClick = (component: string) => {
     setSelectedComponent(component);
-    console.log("Component:", component);
   };
 
   return (
     <>
-      <div className='fixed z-50 top-0 bg-gradient-to-b from-[#adaaa2] to-transparent w-screen flex justify-between'>
+      <div className='fixed z-50 top-0 bg-gradient-to-b from-[#adaaa2] to-transparent w-screen flex justify-between pointer-events-none'>
         <Image 
-            src="/assets/img/WaelLogo.png" 
+            src="/WaelLogo.png"
             alt="Logo" 
             width={logoSize}
             height={logoSize}
             className='cursor-pointer p-2'
           />
-          <div className="md:hidden absolute right-0 py-[-50%] translate-y-[40%] p-2">
+          <div className="md:hidden absolute right-0 py-[-50%] translate-y-[40%] p-2 pointer-events-auto">
             <input type="checkbox" role="button" aria-label="Display the menu" className="menu" 
             onClick={() => setIsOpen(!isOpen)}/>
           </div>

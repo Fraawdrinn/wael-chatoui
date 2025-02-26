@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import AnimatedContainer from "@/components/ui/animated-container";
 
 const Projects = () => {
@@ -8,7 +10,8 @@ const Projects = () => {
             Mes Projets
           </h1>
           <p className="w-[52vw] text-center pl-12 leading-relaxed">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, reprehenderit aut perspiciatis, nesciunt illo officia quos veniam amet ut, aliquid alias. Assumenda dolores aliquid beatae sequi odit, repellat omnis nesciunt!
+            Ayez un aperçu général en regardant directement sur mon &nbsp;
+            <Link href={"https://github.com/Fraawdrinn"} target='_BLANK' className='text-secondary underline'>Github</Link>
           </p>
       </AnimatedContainer>
     </div>

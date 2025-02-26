@@ -121,6 +121,34 @@
 /* ======================= */
 
 @layer utilities {
+  /* Swiper Navigation Buttons */
+  .swiper-button-prev,
+  .swiper-button-next {
+    @apply text-white bg-gray-800/70 rounded-full w-12 h-12 flex justify-center items-center transition duration-300;
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    @apply bg-gray-700/80;
+  }
+
+  /* Modifier l'icône des flèches */
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    @apply text-2xl font-bold text-white;
+  }
+
+  /* Swiper Pagination Dots */
+  .swiper-pagination-bullet {
+    @apply w-3 h-3 bg-gray-400 opacity-50 transition duration-300;
+  }
+
+  .swiper-pagination-bullet-active {
+    @apply bg-yellow-400 opacity-100 scale-125;
+  }
+
+
+
   .presentation-sentences {
     @apply text-center;
     
@@ -141,6 +169,7 @@
   .mark {
     @apply italic font-semibold;
   }
+
 }
 
 

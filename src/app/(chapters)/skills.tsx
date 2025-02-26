@@ -1,4 +1,5 @@
 import AnimatedContainer from "@/components/ui/animated-container";
+import DevToolsCarousel from "@/components/dev-tools-carousel";
 
 const Skills = () => {
   return (
@@ -10,6 +11,7 @@ const Skills = () => {
           <p className="w-[52vw] text-center pl-12 leading-relaxed">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, reprehenderit aut perspiciatis, nesciunt illo officia quos veniam amet ut, aliquid alias. Assumenda dolores aliquid beatae sequi odit, repellat omnis nesciunt!
           </p>
+          <DevToolsCarousel />
       </AnimatedContainer>
     </div>
   )

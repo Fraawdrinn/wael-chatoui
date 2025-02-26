@@ -13,7 +13,7 @@ const AnimatedContainer: React.FC<AnimatedContainerProps> = ({ children }) => {
         <motion.div
           initial={{ opacity: 0, x: -32 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: index * 0.2 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: index * 0.1 }}
           viewport={{ once: true, amount: 0.2 }}
         >
           {child}
