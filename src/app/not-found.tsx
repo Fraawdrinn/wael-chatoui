@@ -9,7 +9,7 @@ export default function Custom404() {
       </p>
       <Link 
       href="/" 
-      className="mt-6 relative text-[22px] text-[#a3503a] font-medium no-underline hover:underline pb-2">
+      className="mt-6 relative text-[22px] text-[#a3503a] font-medium underline hover:underline pb-2">
         Go back home
       </Link>
     </main>

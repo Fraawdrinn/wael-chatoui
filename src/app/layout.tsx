@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="overflow-x-hidden w-screen scroll-smooth"
+        className="max-w-[100vw] overflow-x-hidden scroll-smooth"
       >
         {children}
       </body>
