@@ -26,7 +26,10 @@
 
 @layer base {
   body {
-    @apply text-[var(--foreground)] bg-[var(--background)];
+    @apply text-[var(--foreground)] bg-[var(--darkened-background)];
+  }
+  header, main {
+    @apply bg-[var(--background)]
   }
   p {
     @apply text-sm lg:text-lg w-full lg:w-[52vw] pl-10 lg:pl-16;
@@ -43,7 +46,7 @@
 @layer components {
   /* Menu Button */
   .menu {
-    --s: 1.5rem; /* Size */
+    --s: 24px; /* Size */
     --c: var(--brown2); /* Color */
 
     height: var(--s);
