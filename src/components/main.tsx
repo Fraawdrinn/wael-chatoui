@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 
 import fonts from '@/app/font';
 
@@ -62,7 +61,7 @@ const Main: React.FC = () => {
     <>
       {/* Barre de navigation supérieure */}
       <div className='fixed z-50 top-0 bg-gradient-to-b from-[#adaaa2] to-transparent w-screen flex justify-between pointer-events-none'>
-        <Image 
+        <img 
             src="/WaelLogo.png"
             alt="Logo" 
             width={logoSize}
@@ -70,16 +69,14 @@ const Main: React.FC = () => {
             className='cursor-pointer p-2'
         />
         {/* Bouton menu burger pour le responsive */}
-        <div className="md:hidden absolute right-0 translate-y-[40%] p-2 pointer-events-auto">
           <input 
             type="checkbox" 
             role="button" 
             aria-label="Display the menu" 
-            className="menu cursor-pointer"
+            className="menu cursor-pointer md:hidden absolute right-0 translate-y-[40%] p-2 pointer-events-auto"
             checked={isOpen}
             onChange={() => setIsOpen(!isOpen)}
           />
-        </div>
       </div>
 
       {/* Contenu principal */}

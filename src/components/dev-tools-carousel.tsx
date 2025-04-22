@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -50,7 +49,7 @@ export default function DevToolsCarousel() {
       {/* Swipe Indicator (Hidden after 3s) */}
       {isVisible && (
         <div className="flex justify-center">
-          <Image
+          <img
             ref={indicatorRef}
             width={64}
             height={64}
@@ -73,7 +72,7 @@ export default function DevToolsCarousel() {
           <SwiperSlide key={tool.name} className="flex justify-center">
             <div className="w-full flex flex-col items-center p-6 rounded-xl h-64 mt-6 bg-white">
               <span className="text-2xl">
-                <Image width={toolIconSize} height={toolIconSize} src={tool.icon} alt={tool.name} />
+                <img width={toolIconSize} height={toolIconSize} src={tool.icon} alt={tool.name} />
               </span>
               <span className="mt-3 text-xl font-bold">{tool.name}</span>
               <span className="">{tool.level}/5</span>

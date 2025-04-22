@@ -22,9 +22,6 @@ export default function Presentation() {
           <AnimatedPath />
         </div>
       </div>
-      <h2 className="italic underline text-sm text-center relative bottom-6">
-        Powered by React JS
-      </h2>
     </header>
   );
 };
