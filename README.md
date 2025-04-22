@@ -1,51 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Portfolio - Wael Chatoui
 
-## Getting Started
+Bienvenue sur le dépôt GitHub de mon **portfolio personnel** développé avec **Next.js**, mettant en avant mes projets, mes compétences, et un peu de moi-même en tant qu'étudiant passionné par le développement informatique.
 
-First, run the development server:
+## 🚀 Aperçu
+
+Ce site web a été conçu comme un projet d'apprentissage pratique autour de **React** (via Next.js) et du développement frontend moderne. Il me permet d’expérimenter des bonnes pratiques de développement tout en me créant une vitrine personnelle.
+
+🔗 [Voir le portfolio en ligne](https://wael-chatoui.ovh)  
+📂 Démo interactive | Déploiement via Vercel
+
+---
+
+## 🧭 Pages principales
+
+### 📄 `À propos de moi`
+> Une courte introduction sur mon parcours, mes méthodes d’apprentissage (notamment autodidactes), et mes ambitions dans le domaine de l'informatique.
+
+- Mon background scolaire
+- Ce que j'apprends actuellement
+- Mes aspirations futures (App/IA, Software Engineering)
+
+### 🚧 `Mes projets`
+> Une sélection de projets réalisés pour apprendre ou explorer un domaine particulier. Je privilégie des approches hands-on et concrètes.
+
+(dans la prochaine version)
+- Repos GitHub liés
+- Explication technique et stack utilisée
+- Lien vers les démos (si disponibles)
+
+### 🧠 `Mes compétences`
+> Un aperçu de ce que je maîtrise actuellement, ce que j'explore, et les technos que je souhaite approfondir.
+
+---
+
+## 🛠️ Stack technique
+
+- **Framework principal :** [Next.js 15](https://nextjs.org/)
+- **Langage :** TypeScript
+- **Animation :** Framer Motion via composants personnalisés
+- **Déploiement :** [Vercel](https://vercel.com/)
+- **Style :** TailwindCSS
+
+---
+
+## 📦 Installation locale
+
+Tu veux voir ou modifier le projet en local ? Voici comment le lancer :
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+# Clone le repo
+git clone https://github.com/Fraawdrinn/portfolio.git
+cd portfolio
+
+# Installe les dépendances
+pnpm install
+
+# Lance le serveur de développement
 pnpm dev
-# or
-bun dev
+
+# Ensuite, visite http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📚 Objectifs pédagogiques
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Ce projet a pour but de :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ - Renforcer mes compétences en React/Next.js
 
-## Learn More
+ - Appliquer les principes de composants réutilisables
 
-To learn more about Next.js, take a look at the following resources:
+ - Apprendre à déployer un site en production
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ - Créer une base évolutive pour mon futur professionnel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributions & retours
 
-## Deploy on Vercel
+Je suis toujours ouvert aux retours constructifs ! N'hésite pas à ouvrir une issue ou me contacter directement via mon GitHub si tu veux discuter code, projets ou apprendre ensemble.
+🧠 À propos de moi
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ - Étudiant en première année de bachelor chez Sup de Vinci à Bordeaux.
+ - Curieux, autodidacte, et déterminé à devenir un ingénieur logiciel compétent et créatif.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 Licence
 
-
-Install this project's dependencies
-```
-# Install all dependencies
-npm install
-
-# react
-npm install --save-dev @types/react
-# postgresql
-npm install postgres
-# supabase sdk
-npm install @supabase/supabase-js
-
-```
+Ce projet est sous licence MIT. Tu peux t’en inspirer librement pour tes propres projets !
