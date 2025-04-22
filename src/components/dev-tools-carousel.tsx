@@ -10,15 +10,22 @@ import { motion } from "framer-motion";
 
 const devTools = [
   { name: "React", description: "Bibliothèque JS pour les interfaces web.", level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { name: "HTML", description: "Langage de balisage natif pour le développement web.", level: 5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+  { name: "CSS", description: "Langage de style natif, complémentaire au HTML.", level: 4, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
   { name: "TypeScript", description: "Superset de JavaScript avec typage.", level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
   { name: "Next JS", description: "Framework React pour le SSR et SSG.", level: 2, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
   { name: "Node JS", description: "Exécute du JS côté serveur.", level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
   { name: "Python", description: "Langage polyvalent utilisé pour l'IA, le web et l'automatisation.", level: 5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
   { name: "C", description: "Langage de programmation bas niveau performant et utilisé en systèmes embarqués.", level: 1, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
   { name: "Git", description: "Système de contrôle de version distribué.", level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+  { name: "Bash", description: "Shell Unix puissant pour l'automatisation des tâches et le contrôle système.", level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" },
   { name: "Tailwind CSS", description: "Framework CSS utilitaire pour un design rapide et flexible.", level: 5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
-  { name: "PostgreSQL", description: "Base de données relationnelle avancée et open-source.", level: 4, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+  { name: "SQL", description: "Langage de requête pour interagir avec des bases de données relationnelles, optimisation des performances et gestion avancée des données.", level: 2, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+  { name: "PostgreSQL", description: "Base de données relationnelle open-source robuste, idéale pour les applications complexes nécessitant de la scalabilité et des performances optimisées.", level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+  { name: "Supabase", description: "Plateforme open-source qui fournit des API RESTful et une gestion de base de données PostgreSQL en temps réel, idéale pour les applications modernes.", level: 2, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
+  { name: "Prisma", description: "ORM moderne et type-safe pour Node.js, optimisé pour interagir avec des bases de données relationnelles comme PostgreSQL, MySQL, etc.", level: 2  , icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" },
 ];
+
 
 export default function DevToolsCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
