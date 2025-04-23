@@ -82,7 +82,28 @@ export default function DevToolsCarousel() {
                 <img width={toolIconSize} height={toolIconSize} src={tool.icon} alt={tool.name} />
               </span>
               <span className="mt-3 text-xl font-bold">{tool.name}</span>
-              <span className="">{tool.level}/5</span>
+              <span className="">
+                {Array.from({ length: tool.level }, (_, i) => (
+                  <img
+                    key={i}
+                    width={toolIconSize / 2}
+                    height={toolIconSize / 2}
+                    src="/star.png"
+                    alt="star"
+                    className="inline-block"
+                  />
+                ))}
+                {Array.from({ length: 5 - tool.level }, (_, i) => (
+                    <img
+                      key={i}
+                      width={toolIconSize / 2}
+                      height={toolIconSize / 2}
+                      src="/star-empty.png"
+                      alt="empty star"
+                      className="inline-block"
+                    />
+                  ))}
+              </span>
             </div>
           </SwiperSlide>
         ))}
