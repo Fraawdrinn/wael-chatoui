@@ -36,7 +36,7 @@ const projects = [
     description:
       'Site vitrine pour une agence de location de véhicules. Présentation de la flotte, tarifs et formulaire de contact.',
     tags: ['Next.js', 'TypeScript', 'TailwindCSS'],
-    link: 'https://github.com/wael-chatoui/nikolife-rent',
+    link: 'https://nikolife-rent.com',
     github: null,
     year: '2024',
   },
